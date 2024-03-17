@@ -27,7 +27,7 @@ The downloaded files shall be organized as the following hierarchy:
 ```
 Please use this commond line to install important libary dependencies.
 ```
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 # The trained model
 Pre-trained models (PredNet and DANet) are provided in this repository at ```model/PredNet_best.h5``` and ```model/DANet_best.h5```
