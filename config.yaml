@@ -1,7 +1,7 @@
 # model parameters and data paths
 
 # define path:
-path_eac4_loc: '../ddnet_demo/dataset/EAC4/eac4_lon_lat.npz'                    # longitude and latitude of EAC4 dataset
+path_eac4_loc: '../results/eac4_lon_lat.npz'                    # longitude and latitude of EAC4 dataset
 path_eac4: '../ddnet_demo/dataset/EAC4/EAC4_pm2p5_aod550_hourly/eac4-{}.npy'    # EAC4 reanalysis dataset
 path_emis: "../ddnet_demo/dataset/emission/CAMS-GLOB-sum_Glb_0.75x0.75_anthro_{}_v5.3_hourly_{}.npz"    # emission dataset
 path_cams: "../ddnet_demo/dataset/CAMS/cams_init/init-{}.npy"                   # CAMS dataset
