@@ -1,0 +1,74 @@
+# model parameters and data paths
+
+# define path:
+path_eac4_loc: '../ddnet_demo/dataset/EAC4/eac4_lon_lat.npz'                    # longitude and latitude of EAC4 dataset
+path_eac4: '../ddnet_demo/dataset/EAC4/EAC4_pm2p5_aod550_hourly/eac4-{}.npy'    # EAC4 reanalysis dataset
+path_emis: "../ddnet_demo/dataset/emission/CAMS-GLOB-sum_Glb_0.75x0.75_anthro_{}_v5.3_hourly_{}.npz"    # emission dataset
+path_cams: "../ddnet_demo/dataset/CAMS/cams_init/init-{}.npy"                   # CAMS dataset
+path_modis: "../ddnet_demo/dataset/NASA/MOYD08-combined/satellite-{}.npy"       # satellite dataset
+path_refer: "../ddnet_demo/dataset/refer/refer-{}.npy"
+
+path_norm_pred: "../ddnet_demo/norm/ddnet_demo/dic_norm_prednet.json"        # normalization parameters
+path_norm_da: "../ddnet_demo/norm/ddnet_demo/dic_norm_danet.json"    # normlization for modis dataset
+
+trained_prednet: "../ddnet_demo/model/PredNet_best.h5"                     # trained PredNet
+trained_danet: "../ddnet_demo/model/DANet_best.h5"                     # trained DANet
+
+path_cams_oper: "../ddnet_demo/results/cams_opf/cams-{}.npy"            # operational forecasting from CAMS
+path_out_5days: "../ddnet_demo/results/forecast_5days_ahead/start_{}/"   # outpath for 5day-ahead forecasts
+path_out_long: "../ddnet_demo/results/forecast_long/start_{}/"   # outpath for long-term forecasts
+path_out_da: "../ddnet_demo/results/danet_test_tempo/start_{}/"   # output for temporal DANet test
+path_out_oper: "../ddnet_demo/results/forecast_oper/start_{}/"   # output for operational forecasting
+
+path_figures: "../figures/"                                 # save figures
+
+# grid points in studied results
+nx: 241
+ny: 480
+
+# frame ahead as input data
+nframe: 1
+
+# start and end datetime for test
+start_test: 2019-01-01 00:00
+end_test: 2019-12-31 23:00
+
+# =========== setup for PredNet ====================
+
+# define a dictionary for features: corresponding indices
+features_prednet: {'t2m':0, 'u10':1, 'v10':2, 'tcwv':6, 'z':4}
+# list for emissions, used as inputs in PredNet
+emis_list: ['bc', 'oc']
+# define a dictionary for labels: corresponding indices
+labels_prednet: {'pm2p5':3, 'aod550':5}
+
+# time interval (hours)
+time_interval_start: 12      # start
+time_interval: 3             # forecast step
+
+# start and end datetime for training
+start_train_prednet: 2011-06-01 00:00
+end_train_prednet: 2017-12-31 23:00
+
+batch_size_prednet: 4
+epochs_prednet: 200
+
+prednet_training_save: "../model/PredNet_best_new.h5"     # newly trained PredNet
+his_prednet_training_save: "../model/his_PredNet_training.npz"     # training history for PredNet
+
+# ============= setup for DANet ==============================
+
+features_danet: {'aod550':1}  # data assimilation for AOD only
+
+# start and end datetime for training
+start_train_danet: 2018-01-01 00:00
+end_train_danet: 2018-12-31 23:00
+
+batch_size_danet: 8
+epochs_danet: 100
+
+danet_training_save: "../model/DANet_best_new.h5"     # newly trained PredNet
+his_danet_training_save: "../model/his_DANet_training.npz"     # training history for PredNet
+
+# ================ setup for operational forecasting ==========
+da_freq: 4                    # data assimilation frequency, every 4*3 = 12 hours

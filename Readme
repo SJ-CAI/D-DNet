@@ -1,0 +1,15 @@
+# this repository provided codes for D-DNet training, validation and visualisation
+
+1. implement D-DNet for operational forecasting
+$ D-DNet/DDNet_operal_forecasting.py
+
+2. PredNet testing for 5days-ahead forecasting and long-term forecasting
+$ PredNet/PredNet_forecasting_5days.py
+$ PredNet/PredNet_forecasting_long.py
+
+3. DANet tesing
+$ DANet/DANet_testing.py
+
+4. visualisation
+
+
