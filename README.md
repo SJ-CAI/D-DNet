@@ -55,3 +55,6 @@ edit the paths in the config.yaml file to point to your dataset paths:
 ```
 # License
 The D-DNet is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation.
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14987021.svg)](https://doi.org/10.5281/zenodo.14987021)
+
