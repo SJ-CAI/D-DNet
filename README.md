@@ -22,6 +22,8 @@ conda env create -f environment.yml
 conda activate ddnet
 ```
 
+> **Note:** `cupy-cuda12x` requires CUDA 12. If your system uses CUDA 11, replace it with `cupy-cuda11x` in `environment.yml` before running the above command. `cartopy` is installed via `conda-forge` automatically to avoid dependency conflicts.
+
 ### 3. Repository structure
 
 ```
